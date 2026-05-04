@@ -77,6 +77,7 @@ export const UserScalarFieldEnum = {
   username: 'username',
   password: 'password',
   avatar: 'avatar',
+  bio: 'bio',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -88,6 +89,7 @@ export const BlogScalarFieldEnum = {
   id: 'id',
   title: 'title',
   content: 'content',
+  published: 'published',
   image: 'image',
   authorId: 'authorId',
   createdAt: 'createdAt',

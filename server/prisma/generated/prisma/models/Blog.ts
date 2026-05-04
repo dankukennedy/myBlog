@@ -28,6 +28,7 @@ export type BlogMinAggregateOutputType = {
   id: string | null
   title: string | null
   content: string | null
+  published: boolean | null
   image: string | null
   authorId: string | null
   createdAt: Date | null
@@ -38,6 +39,7 @@ export type BlogMaxAggregateOutputType = {
   id: string | null
   title: string | null
   content: string | null
+  published: boolean | null
   image: string | null
   authorId: string | null
   createdAt: Date | null
@@ -48,6 +50,7 @@ export type BlogCountAggregateOutputType = {
   id: number
   title: number
   content: number
+  published: number
   image: number
   authorId: number
   createdAt: number
@@ -60,6 +63,7 @@ export type BlogMinAggregateInputType = {
   id?: true
   title?: true
   content?: true
+  published?: true
   image?: true
   authorId?: true
   createdAt?: true
@@ -70,6 +74,7 @@ export type BlogMaxAggregateInputType = {
   id?: true
   title?: true
   content?: true
+  published?: true
   image?: true
   authorId?: true
   createdAt?: true
@@ -80,6 +85,7 @@ export type BlogCountAggregateInputType = {
   id?: true
   title?: true
   content?: true
+  published?: true
   image?: true
   authorId?: true
   createdAt?: true
@@ -163,6 +169,7 @@ export type BlogGroupByOutputType = {
   id: string
   title: string
   content: string
+  published: boolean
   image: string | null
   authorId: string
   createdAt: Date
@@ -194,6 +201,7 @@ export type BlogWhereInput = {
   id?: Prisma.StringFilter<"Blog"> | string
   title?: Prisma.StringFilter<"Blog"> | string
   content?: Prisma.StringFilter<"Blog"> | string
+  published?: Prisma.BoolFilter<"Blog"> | boolean
   image?: Prisma.StringNullableFilter<"Blog"> | string | null
   authorId?: Prisma.StringFilter<"Blog"> | string
   createdAt?: Prisma.DateTimeFilter<"Blog"> | Date | string
@@ -205,6 +213,7 @@ export type BlogOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   content?: Prisma.SortOrder
+  published?: Prisma.SortOrder
   image?: Prisma.SortOrderInput | Prisma.SortOrder
   authorId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -219,6 +228,7 @@ export type BlogWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.BlogWhereInput | Prisma.BlogWhereInput[]
   title?: Prisma.StringFilter<"Blog"> | string
   content?: Prisma.StringFilter<"Blog"> | string
+  published?: Prisma.BoolFilter<"Blog"> | boolean
   image?: Prisma.StringNullableFilter<"Blog"> | string | null
   authorId?: Prisma.StringFilter<"Blog"> | string
   createdAt?: Prisma.DateTimeFilter<"Blog"> | Date | string
@@ -230,6 +240,7 @@ export type BlogOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   content?: Prisma.SortOrder
+  published?: Prisma.SortOrder
   image?: Prisma.SortOrderInput | Prisma.SortOrder
   authorId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -246,6 +257,7 @@ export type BlogScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"Blog"> | string
   title?: Prisma.StringWithAggregatesFilter<"Blog"> | string
   content?: Prisma.StringWithAggregatesFilter<"Blog"> | string
+  published?: Prisma.BoolWithAggregatesFilter<"Blog"> | boolean
   image?: Prisma.StringNullableWithAggregatesFilter<"Blog"> | string | null
   authorId?: Prisma.StringWithAggregatesFilter<"Blog"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Blog"> | Date | string
@@ -256,6 +268,7 @@ export type BlogCreateInput = {
   id?: string
   title: string
   content: string
+  published?: boolean
   image?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -266,6 +279,7 @@ export type BlogUncheckedCreateInput = {
   id?: string
   title: string
   content: string
+  published?: boolean
   image?: string | null
   authorId: string
   createdAt?: Date | string
@@ -276,6 +290,7 @@ export type BlogUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.StringFieldUpdateOperationsInput | string
+  published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -286,6 +301,7 @@ export type BlogUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.StringFieldUpdateOperationsInput | string
+  published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -296,6 +312,7 @@ export type BlogCreateManyInput = {
   id?: string
   title: string
   content: string
+  published?: boolean
   image?: string | null
   authorId: string
   createdAt?: Date | string
@@ -306,6 +323,7 @@ export type BlogUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.StringFieldUpdateOperationsInput | string
+  published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -315,6 +333,7 @@ export type BlogUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.StringFieldUpdateOperationsInput | string
+  published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -335,6 +354,7 @@ export type BlogCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   content?: Prisma.SortOrder
+  published?: Prisma.SortOrder
   image?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -345,6 +365,7 @@ export type BlogMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   content?: Prisma.SortOrder
+  published?: Prisma.SortOrder
   image?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -355,6 +376,7 @@ export type BlogMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   content?: Prisma.SortOrder
+  published?: Prisma.SortOrder
   image?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -403,10 +425,15 @@ export type BlogUncheckedUpdateManyWithoutAuthorNestedInput = {
   deleteMany?: Prisma.BlogScalarWhereInput | Prisma.BlogScalarWhereInput[]
 }
 
+export type BoolFieldUpdateOperationsInput = {
+  set?: boolean
+}
+
 export type BlogCreateWithoutAuthorInput = {
   id?: string
   title: string
   content: string
+  published?: boolean
   image?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -416,6 +443,7 @@ export type BlogUncheckedCreateWithoutAuthorInput = {
   id?: string
   title: string
   content: string
+  published?: boolean
   image?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -454,6 +482,7 @@ export type BlogScalarWhereInput = {
   id?: Prisma.StringFilter<"Blog"> | string
   title?: Prisma.StringFilter<"Blog"> | string
   content?: Prisma.StringFilter<"Blog"> | string
+  published?: Prisma.BoolFilter<"Blog"> | boolean
   image?: Prisma.StringNullableFilter<"Blog"> | string | null
   authorId?: Prisma.StringFilter<"Blog"> | string
   createdAt?: Prisma.DateTimeFilter<"Blog"> | Date | string
@@ -464,6 +493,7 @@ export type BlogCreateManyAuthorInput = {
   id?: string
   title: string
   content: string
+  published?: boolean
   image?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -473,6 +503,7 @@ export type BlogUpdateWithoutAuthorInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.StringFieldUpdateOperationsInput | string
+  published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -482,6 +513,7 @@ export type BlogUncheckedUpdateWithoutAuthorInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.StringFieldUpdateOperationsInput | string
+  published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -491,6 +523,7 @@ export type BlogUncheckedUpdateManyWithoutAuthorInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   content?: Prisma.StringFieldUpdateOperationsInput | string
+  published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -502,6 +535,7 @@ export type BlogSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   id?: boolean
   title?: boolean
   content?: boolean
+  published?: boolean
   image?: boolean
   authorId?: boolean
   createdAt?: boolean
@@ -513,6 +547,7 @@ export type BlogSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   id?: boolean
   title?: boolean
   content?: boolean
+  published?: boolean
   image?: boolean
   authorId?: boolean
   createdAt?: boolean
@@ -524,6 +559,7 @@ export type BlogSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   id?: boolean
   title?: boolean
   content?: boolean
+  published?: boolean
   image?: boolean
   authorId?: boolean
   createdAt?: boolean
@@ -535,13 +571,14 @@ export type BlogSelectScalar = {
   id?: boolean
   title?: boolean
   content?: boolean
+  published?: boolean
   image?: boolean
   authorId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type BlogOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "content" | "image" | "authorId" | "createdAt" | "updatedAt", ExtArgs["result"]["blog"]>
+export type BlogOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "content" | "published" | "image" | "authorId" | "createdAt" | "updatedAt", ExtArgs["result"]["blog"]>
 export type BlogInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   author?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -561,6 +598,7 @@ export type $BlogPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     id: string
     title: string
     content: string
+    published: boolean
     image: string | null
     authorId: string
     createdAt: Date
@@ -992,6 +1030,7 @@ export interface BlogFieldRefs {
   readonly id: Prisma.FieldRef<"Blog", 'String'>
   readonly title: Prisma.FieldRef<"Blog", 'String'>
   readonly content: Prisma.FieldRef<"Blog", 'String'>
+  readonly published: Prisma.FieldRef<"Blog", 'Boolean'>
   readonly image: Prisma.FieldRef<"Blog", 'String'>
   readonly authorId: Prisma.FieldRef<"Blog", 'String'>
   readonly createdAt: Prisma.FieldRef<"Blog", 'DateTime'>
