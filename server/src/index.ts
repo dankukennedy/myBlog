@@ -25,7 +25,7 @@ import blogRoutes from "./routes/blogRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
 app.use("/auth", authRoutes);
-app.use("/blogs", blogRoutes);
+app.use("/posts", blogRoutes);
 app.use("/users", userRoutes);
 
 app.listen(PORT, () => {

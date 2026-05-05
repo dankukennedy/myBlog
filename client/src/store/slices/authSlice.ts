@@ -16,7 +16,7 @@ interface AuthState {
     error: string | null;
 }
 
-const API_URL = "http://localhost:3000";
+const API_URL = "http://localhost:3000/auth";
 
 // Helper for error handling
 const getErrorMessage = (error: unknown) => {

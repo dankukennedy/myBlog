@@ -31,7 +31,7 @@ interface BlogState {
     error: string | null;
 }
 
-const API_URL = "http://localhost:3000";
+const API_URL = "http://localhost:3000/posts";
 
 /** --- HELPER --- **/
 
@@ -179,8 +179,8 @@ const blogSlice = createSlice({
                 if (state.currentBlog?.id === deletedId) state.currentBlog = null;
             })
 
-            /** 
-             * Global Matchers: These fix the "implicit any" error by 
+            /**
+             * Global Matchers: These fix the "implicit any" error by
              * explicitly typing the action as UnknownAction.
              **/
             .addMatcher(

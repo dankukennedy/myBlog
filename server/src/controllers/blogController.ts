@@ -19,7 +19,9 @@ export const createBlog = async (req: AuthRequest, res: Response, next: NextFunc
                 authorId: req.userId
             }
         });
-
+          if(!blog) {
+            return res.status(400).json({ message: "Failed to create blog post" });
+        }
         res.status(201).json({ blog });
     } catch (error:unknown) {
         res.status(500).json({ message: "Failed to create blog post" });
@@ -33,7 +35,9 @@ export const getBlogs = async (req: Request, res: Response, next: NextFunction) 
             where: { published: true },
             include: { author: { select: { username: true } } }
         });
-
+          if(!blogs || blogs.length === 0) {
+            return res.status(404).json({ message: "No blog posts found" });
+        }
         res.json({ blogs });
     } catch (error:unknown) {
         res.status(500).json({ message: "Failed to fetch blog posts" });
@@ -52,6 +56,9 @@ export const getUserBlogs = async (req: AuthRequest, res: Response, next: NextFu
             include: { author: { select: { username: true , avatar:true} } },
                 orderBy: { createdAt: "desc" }
         });
+        if (!blogs) {
+            return res.status(404).json({ message: "No blog posts found for this user" });
+        }
 
         res.json({ blogs });
     } catch (error:unknown) {
